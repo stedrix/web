@@ -48,12 +48,13 @@
     </div>
     <div class="frame hero-frame">
       <div class="frame-in">
-        <div class="bar" aria-hidden="true"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="mono url">app.stedrix.com / mantenimiento</span><span class="live mono"><span class="ok">●</span> en vivo</span></div>
-        <img src="img/mant-tablero.webp" width="1600" height="1000" alt="Tablero de Mantenimiento de Stedrix con órdenes abiertas, equipos parados, disponibilidad y costo del mes, en una empresa de demostración" fetchpriority="high">
+        <div class="bar" aria-hidden="true"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="mono url" id="hero-url">app.stedrix.com / mantenimiento</span><span class="live mono"><span class="ok">●</span> en vivo</span></div>
+        <div class="slides" id="hero-slides" aria-roledescription="carrusel" aria-label="Pantallas de Stedrix">
+          <div class="flyer" aria-live="polite"><span class="mono flyer-k" id="hero-k"></span><b id="hero-t"></b></div>
+        </div>
       </div>
-      <div class="float f1 hide-sm" aria-hidden="true"><span class="mono k">DISPONIBILIDAD</span><b>98.9 %</b></div>
-      <div class="float f2 hide-sm" aria-hidden="true"><span class="mono k">e-CF</span><b class="c-green">Al día</b></div>
     </div>
+    <div class="hero-ctl"><div class="dots" id="hero-dots" role="group" aria-label="Elegir pantalla"></div><button type="button" class="pause" id="hero-pause" aria-label="Pausar la presentación">❚❚</button></div>
   </div>
 </section>
 
@@ -87,7 +88,8 @@
     <div class="frame">
       <div class="frame-in">
         <div class="bar" aria-hidden="true"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="mono url" id="shot-path"></span></div>
-        <img id="shot-img" role="tabpanel" width="1600" height="1000" alt="" loading="lazy">
+        <div class="slides" id="gal-slides" role="tabpanel"></div>
+        <div class="prog" aria-hidden="true"><span id="gal-prog"></span></div>
       </div>
     </div>
     <p id="shot-cap" class="cap"></p>

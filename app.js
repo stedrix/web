@@ -1,6 +1,7 @@
 (function () {
   // ---- Pantallas reales ----
   var shots = [
+    { tab: 'Mantenimiento · tablero', path: 'mantenimiento', src: 'img/mant-tablero.webp', alt: 'Tablero de Mantenimiento', cap: 'Lo que ve el jefe de mantenimiento al abrir el día: órdenes abiertas y atrasadas, equipos parados con su reloj corriendo y el costo del mes.' },
     { tab: 'Mantenimiento · equipos', path: 'mantenimiento/equipos/EM-02', src: 'img/mant-equipo.webp', alt: 'Ficha de un equipo en Mantenimiento', cap: 'Cada máquina con su ubicación, disponibilidad, tiempo entre fallas y tiempo de reparación, planes preventivos, repuestos e historial.' },
     { tab: 'Calidad · lotes por decidir', path: 'calidad/lotes', src: 'img/calidad-lotes.webp', alt: 'Lotes por decidir en Calidad', cap: 'Cada lote que entra, se produce o se despacha pasa por Calidad antes de usarse: por origen, con lo que vence hoy, lo atrasado y lo que espera al laboratorio externo.' },
     { tab: 'Calidad · orden de inspección', path: 'calidad/orden/CR-000002', src: 'img/calidad-orden.webp', alt: 'Orden de calidad con resultados por muestra', cap: 'Resultados por muestra y por grupo de pruebas; la decisión del lote, con segunda firma cuando se libera con desviación.' },
@@ -11,11 +12,64 @@
     { tab: 'Facturación · caja', path: 'facturacion/caja', src: 'img/facturacion-pos.webp', alt: 'Punto de venta con una venta en curso', cap: 'Caja rápida con teclado, promociones, ITBIS y e-CF; la balanza y la impresora térmica se conectan con el agente local.' },
     { tab: 'RRHH · inicio', path: 'inicio', src: 'img/rrhh.webp', alt: 'Inicio con indicadores de recursos humanos', cap: 'Plantilla, rotación, ausentismo, tardanzas y horas extra del mes, por departamento.' }
   ];
-  var tabs = document.getElementById('tabs'), img = document.getElementById('shot-img'), cap = document.getElementById('shot-cap'), path = document.getElementById('shot-path'), tbtn = [];
+  var still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function buildSlides(box, list, eager) {
+    return list.map(function (s, i) {
+      var im = document.createElement('img'); im.src = s.src; im.alt = s.alt; im.width = 1600; im.height = 1000;
+      if (!eager || i > 0) im.loading = 'lazy'; else im.fetchPriority = 'high';
+      box.insertBefore(im, box.firstChild && box.firstChild.className === 'flyer' ? box.firstChild : null);
+      return im;
+    });
+  }
+
+  // ---- Portada: presentación tipo flyer ----
+  var hero = [
+    { src: 'img/mant-tablero.webp', path: 'mantenimiento', k: 'MANTENIMIENTO', t: 'Cada paro, con su reloj corriendo.', alt: 'Tablero de Mantenimiento con equipos parados, preventivos y costo del mes' },
+    { src: 'img/calidad-lotes.webp', path: 'calidad/lotes', k: 'CALIDAD', t: 'Ningún lote sale sin pasar por Calidad.', alt: 'Lotes por decidir en Calidad' },
+    { src: 'img/facturacion-pos.webp', path: 'facturacion/caja', k: 'FACTURACIÓN · e-CF', t: 'Vende rápido y factura electrónico.', alt: 'Caja con una venta en curso y comprobante electrónico' },
+    { src: 'img/trazabilidad.webp', path: 'calidad/trazabilidad', k: 'TRAZABILIDAD', t: 'Del suplidor al cliente, en segundos.', alt: 'Trazabilidad de un lote hacia atrás y hacia adelante' },
+    { src: 'img/produccion.webp', path: 'produccion/ordenes', k: 'PRODUCCIÓN', t: 'El costo real de cada orden.', alt: 'Orden de producción con materiales y costo' },
+    { src: 'img/contabilidad.webp', path: 'contabilidad/estados', k: 'CONTABILIDAD', t: 'Tus estados financieros, sin cuadrar a mano.', alt: 'Estados financieros' },
+    { src: 'img/rrhh.webp', path: 'inicio', k: 'RECURSOS HUMANOS', t: 'Tu gente en números, al día.', alt: 'Indicadores de recursos humanos' }
+  ];
+  var hbox = document.getElementById('hero-slides'), himgs = buildSlides(hbox, hero, true), hi = 0, htimer = null, hpaused = still;
+  var hdots = document.getElementById('hero-dots'), fly = hbox.querySelector('.flyer'), hp = document.getElementById('hero-pause');
+  var dbtn = hero.map(function (s, i) {
+    var b = document.createElement('button'); b.type = 'button'; b.setAttribute('aria-label', s.k.toLowerCase());
+    b.addEventListener('click', function () { showHero(i); restartHero(); }); hdots.appendChild(b); return b;
+  });
+  function showHero(i) {
+    hi = i; var s = hero[i];
+    himgs.forEach(function (im, j) { im.classList.toggle('on', j === i); });
+    dbtn.forEach(function (b, j) { b.setAttribute('aria-current', j === i ? 'true' : 'false'); });
+    document.getElementById('hero-url').textContent = 'app.stedrix.com / ' + s.path;
+    document.getElementById('hero-k').textContent = s.k; document.getElementById('hero-t').textContent = s.t;
+    fly.classList.remove('swap'); void fly.offsetWidth; fly.classList.add('swap');
+  }
+  function restartHero() { clearInterval(htimer); if (!hpaused) htimer = setInterval(function () { showHero((hi + 1) % hero.length); }, 5000); }
+  function setHeroPause(v) { hpaused = v; hp.textContent = v ? '▶' : '❚❚'; hp.setAttribute('aria-label', v ? 'Reanudar la presentación' : 'Pausar la presentación'); restartHero(); }
+  hp.addEventListener('click', function () { setHeroPause(!hpaused); });
+  var hframe = hbox.closest('.frame');
+  hframe.addEventListener('mouseenter', function () { clearInterval(htimer); });
+  hframe.addEventListener('mouseleave', restartHero);
+  showHero(0); setHeroPause(hpaused);
+
+  // ---- Pantallas reales: pestañas que avanzan solas ----
+  var tabs = document.getElementById('tabs'), gbox = document.getElementById('gal-slides'), gimgs = buildSlides(gbox, shots, false);
+  var cap = document.getElementById('shot-cap'), path = document.getElementById('shot-path'), prog = document.getElementById('gal-prog'), tbtn = [], gi = 0, gtimer = null, gstart = 0, ghold = false, GMS = 6000;
   function pickShot(i, focus) {
-    var s = shots[i]; img.src = s.src; img.alt = s.alt; cap.textContent = s.cap; path.textContent = 'app.stedrix.com / ' + s.path;
+    gi = i; var s = shots[i]; cap.textContent = s.cap; path.textContent = 'app.stedrix.com / ' + s.path;
+    gimgs.forEach(function (im, j) { im.classList.toggle('on', j === i); if (j === i) im.loading = 'eager'; });
     tbtn.forEach(function (b, j) { b.setAttribute('aria-selected', j === i ? 'true' : 'false'); b.tabIndex = j === i ? 0 : -1; });
     if (focus) tbtn[i].focus();
+    gstart = performance.now();
+  }
+  function tick(now) {
+    if (!still && !ghold) {
+      var f = Math.min(1, (now - gstart) / GMS); prog.style.width = (f * 100) + '%';
+      if (f >= 1) pickShot((gi + 1) % shots.length);
+    } else if (ghold) { gstart = now - (parseFloat(prog.style.width) || 0) / 100 * GMS; }
+    requestAnimationFrame(tick);
   }
   shots.forEach(function (s, i) {
     var b = document.createElement('button'); b.type = 'button'; b.className = 'tab'; b.setAttribute('role', 'tab'); b.textContent = s.tab;
@@ -26,7 +80,13 @@
     });
     tabs.appendChild(b); tbtn.push(b);
   });
+  var gsec = document.getElementById('por-dentro');
+  gsec.addEventListener('mouseenter', function () { ghold = true; });
+  gsec.addEventListener('mouseleave', function () { ghold = false; });
+  gsec.addEventListener('focusin', function () { ghold = true; });
+  gsec.addEventListener('focusout', function () { ghold = false; });
   pickShot(0);
+  if (!still) requestAnimationFrame(tick); else prog.parentNode.hidden = true;
 
   // ---- Módulos + simulador ----
   var mods = [
