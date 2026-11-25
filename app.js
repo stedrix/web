@@ -24,9 +24,7 @@
 
   function swap(box, imgs, i) {
     imgs.forEach(function (im, j) { im.classList.remove('prev'); if (im.classList.contains('on') && j !== i) { im.classList.remove('on'); im.classList.add('prev'); } });
-    var im = imgs[i]; im.classList.remove('on'); void im.offsetWidth; im.classList.add('on');
-    var sc = box.querySelector('.scan'); if (!sc) { sc = document.createElement('span'); sc.className = 'scan'; box.appendChild(sc); }
-    sc.classList.remove('go'); void sc.offsetWidth; if (!still) sc.classList.add('go');
+    var im = imgs[i], first = !box.dataset.started; box.dataset.started = '1'; im.classList.remove('on'); void im.offsetWidth; im.classList.toggle('first', first); im.classList.add('on');
   }
 
   // ---- Portada: presentación tipo flyer ----
