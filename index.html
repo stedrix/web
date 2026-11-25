@@ -9,13 +9,13 @@
 <meta property="og:description" content="ERP en la nube hecho en República Dominicana. Sin servidores, por módulos y con soporte incluido.">
 <meta property="og:image" content="https://stedrix.com/img/mant-tablero.webp">
 <meta property="og:url" content="https://stedrix.com/">
-<meta name="theme-color" content="#05080F">
+<meta name="theme-color" content="#1747C9">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
@@ -30,31 +30,35 @@
       <a href="#planes">Planes</a>
       <a href="#contacto">Contacto</a>
     </div>
-    <a href="#contacto" class="btn btn-coral nav-cta">Solicitar demo</a>
+    <a href="#contacto" class="btn btn-primary nav-cta">Solicitar demo</a>
   </nav>
 </header>
 
 <main>
 <!-- HERO -->
-<section id="inicio" class="grid-bg hero">
-  <div class="glow" aria-hidden="true"></div>
+<section id="inicio" class="hero">
   <div class="wrap hero-in">
-    <span class="pill"><span class="ok">●</span> ERP en la nube · en renta por módulos · hecho en RD</span>
-    <h1 class="h1">Tu ERP completo, <span class="c-coral">en renta</span> <span class="c-cyan">y en la nube.</span></h1>
-    <p class="hero-p">Contabilidad, nómina, inventario, facturación electrónica, producción, calidad y mantenimiento sobre una sola base de datos. Sin comprar servidores ni licencias: activa solo los módulos que usas y paga una renta mensual.</p>
-    <div class="row-c">
-      <a href="#contacto" class="btn btn-coral">Solicitar demostración</a>
-      <a href="#modulos" class="btn btn-ghost">Arma tu sistema <span class="mono c-cyan">→</span></a>
+    <div class="hero-txt">
+      <span class="pill"><span class="ok">●</span> ERP en la nube · hecho en República Dominicana</span>
+      <h1 class="h1">Toda tu empresa en <span class="c-brand">un solo sistema</span>, en renta.</h1>
+      <p class="hero-p">Contabilidad, nómina, inventario, facturación electrónica, producción, calidad y mantenimiento sobre una sola base de datos. Sin comprar servidores ni licencias: activa los módulos que usas y paga una renta mensual.</p>
+      <div class="row-c">
+        <a href="#contacto" class="btn btn-primary">Solicitar demostración</a>
+        <a href="#modulos" class="btn btn-ghost">Ver módulos</a>
+      </div>
+      <ul class="hero-ticks"><li>Facturación electrónica e-CF</li><li>TSS e ISR al día</li><li>Soporte local</li></ul>
     </div>
-    <div class="frame hero-frame">
-      <div class="frame-in">
-        <div class="bar" aria-hidden="true"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="mono url" id="hero-url">app.stedrix.com / mantenimiento</span><span class="live mono"><span class="ok">●</span> en vivo</span></div>
-        <div class="slides" id="hero-slides" aria-roledescription="carrusel" aria-label="Pantallas de Stedrix">
-          <div class="flyer" aria-live="polite"><span class="mono flyer-k" id="hero-k"></span><b id="hero-t"></b></div>
+    <div class="hero-vis">
+      <div class="frame hero-frame">
+        <div class="frame-in">
+          <div class="bar" aria-hidden="true"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="url" id="hero-url">app.stedrix.com / mantenimiento</span></div>
+          <div class="slides" id="hero-slides" aria-roledescription="carrusel" aria-label="Pantallas de Stedrix">
+            <div class="flyer" aria-live="polite"><span class="flyer-k" id="hero-k"></span><b id="hero-t"></b></div>
+          </div>
         </div>
       </div>
+      <div class="hero-ctl"><div class="dots" id="hero-dots" role="group" aria-label="Elegir pantalla"></div><button type="button" class="pause" id="hero-pause" aria-label="Pausar la presentación">❚❚</button></div>
     </div>
-    <div class="hero-ctl"><div class="dots" id="hero-dots" role="group" aria-label="Elegir pantalla"></div><button type="button" class="pause" id="hero-pause" aria-label="Pausar la presentación">❚❚</button></div>
   </div>
 </section>
 
@@ -77,10 +81,10 @@
 </section>
 
 <!-- PANTALLAS REALES -->
-<section id="por-dentro" class="grid-bg sec">
+<section id="por-dentro" class="sec alt">
   <div class="wrap stack-32">
     <div class="head">
-      <span class="tag">// el sistema por dentro</span>
+      <span class="tag">el sistema por dentro</span>
       <h2 class="h2">Pantallas reales, no maquetas.</h2>
       <p class="lead">Así se ve Stedrix trabajando con una empresa de demostración: una manufacturera de alimentos con datos de ejemplo.</p>
     </div>
@@ -100,7 +104,7 @@
 <section id="modulos" class="sec">
   <div class="wrap stack-32">
     <div class="head">
-      <span class="tag">// módulos</span>
+      <span class="tag">módulos</span>
       <h2 class="h2">Arma tu sistema. Todo habla con todo.</h2>
       <p class="lead">Toca los módulos que necesitas. A la derecha ves tu configuración, y con ella te preparamos la cotización.</p>
     </div>
@@ -113,14 +117,14 @@
     <div class="mod-layout">
       <div class="mod-grid" id="mod-grid"></div>
       <aside class="sim" aria-label="Simulador de tu configuración">
-        <div class="sim-head"><span class="tag">// tu configuración</span><span class="mono sim-count" id="sim-count">0 módulos</span></div>
+        <div class="sim-head"><span class="tag">Tu configuración</span><span class="mono sim-count" id="sim-count">0 módulos</span></div>
         <ul class="sim-list" id="sim-list"><li class="muted">Toca un módulo para agregarlo.</li></ul>
-        <label class="lbl" for="sim-users">usuarios: <b id="sim-users-v" class="c-white">10</b></label>
+        <label class="lbl" for="sim-users">Usuarios: <b id="sim-users-v" class="c-white">10</b></label>
         <input type="range" id="sim-users" min="1" max="100" value="10" class="range">
         <div class="sim-row"><span>Plan sugerido</span><b id="sim-plan">Esencial PyME</b></div>
         <div class="sim-row"><span>Renta mensual</span><b class="c-cyan">A cotizar</b></div>
         <p class="sim-note">Sin costo de instalación de servidores. La renta incluye alojamiento, respaldos, soporte y actualizaciones.</p>
-        <a href="#contacto" class="btn btn-coral full-w" id="sim-go">Cotizar esta configuración</a>
+        <a href="#contacto" class="btn btn-primary full-w" id="sim-go">Cotizar esta configuración</a>
       </aside>
     </div>
   </div>
@@ -130,7 +134,7 @@
 <section id="como-funciona" class="sec how">
   <div class="wrap stack-32">
     <div class="head">
-      <span class="tag">// cómo funciona</span>
+      <span class="tag">cómo funciona</span>
       <h2 class="h2">De la demo a tu primer cierre, sin costos ocultos.</h2>
     </div>
     <ol class="steps">
@@ -142,10 +146,10 @@
 </section>
 
 <!-- PLANES -->
-<section id="planes" class="grid-bg sec">
+<section id="planes" class="sec alt">
   <div class="wrap stack-32">
     <div class="head center">
-      <span class="tag">// planes</span>
+      <span class="tag">planes</span>
       <h2 class="h2">Un plan para cada etapa de tu empresa.</h2>
       <p class="lead">Precios en preparación: te enviamos la cotización exacta según tus módulos y usuarios.</p>
     </div>
@@ -167,7 +171,7 @@
         <h3>Profesional Crecimiento</h3>
         <div class="price"><b>A cotizar</b><span class="per" data-per></span></div>
         <ul><li>Hasta 7 módulos</li><li>Hasta 40 usuarios</li><li>Producción, calidad y mantenimiento</li><li>Soporte prioritario</li><li>Acompañamiento en el arranque</li></ul>
-        <button type="button" class="btn btn-coral full-w" data-elegir>Elegir Profesional</button>
+        <button type="button" class="btn btn-primary full-w" data-elegir>Elegir Profesional</button>
       </article>
       <article class="plan" data-plan="Corporativo">
         <span class="tag">corporativo</span>
@@ -184,25 +188,25 @@
 <section id="contacto" class="sec cta">
   <div class="wrap cta-in">
     <div class="cta-txt">
-      <span class="tag">// contacto</span>
+      <span class="tag">contacto</span>
       <h2 class="h2">Mírala funcionar con una empresa como la tuya.</h2>
       <p class="lead">Cuéntanos qué hace tu empresa. Te escribimos para coordinar la demostración y la cotización.</p>
       <div class="sel" aria-live="polite">
-        <span class="lbl">tu selección</span>
+        <span class="lbl">Tu selección</span>
         <div id="sel-chips" class="sel-chips"><span class="muted">Aún no eliges módulos ni plan.</span></div>
       </div>
       <p class="mono contact"><a href="mailto:info@stedrix.com">info@stedrix.com</a><br>Santo Domingo, República Dominicana</p>
     </div>
     <div class="form-box">
       <form id="form" class="form" aria-label="Solicitar demostración">
-        <div><label class="lbl" for="t-nombre">nombre</label><input class="in" id="t-nombre" name="nombre" type="text" autocomplete="name" required></div>
-        <div><label class="lbl" for="t-empresa">empresa</label><input class="in" id="t-empresa" name="empresa" type="text" autocomplete="organization" required></div>
-        <div><label class="lbl" for="t-correo">correo</label><input class="in" id="t-correo" name="correo" type="email" autocomplete="email" required></div>
-        <div><label class="lbl" for="t-tel">teléfono</label><input class="in" id="t-tel" name="telefono" type="tel" autocomplete="tel"></div>
-        <div class="full"><label class="lbl" for="t-msg">mensaje</label><textarea class="in" id="t-msg" name="mensaje" rows="4"></textarea></div>
+        <div><label class="lbl" for="t-nombre">Nombre</label><input class="in" id="t-nombre" name="nombre" type="text" autocomplete="name" required></div>
+        <div><label class="lbl" for="t-empresa">Empresa</label><input class="in" id="t-empresa" name="empresa" type="text" autocomplete="organization" required></div>
+        <div><label class="lbl" for="t-correo">Correo</label><input class="in" id="t-correo" name="correo" type="email" autocomplete="email" required></div>
+        <div><label class="lbl" for="t-tel">Teléfono</label><input class="in" id="t-tel" name="telefono" type="tel" autocomplete="tel"></div>
+        <div class="full"><label class="lbl" for="t-msg">Mensaje</label><textarea class="in" id="t-msg" name="mensaje" rows="4"></textarea></div>
         <div class="full form-foot">
-          <span class="mono hint">se abre tu correo con la solicitud lista</span>
-          <button type="submit" class="btn btn-coral">Enviar solicitud</button>
+          <span class="mono hint">Se abre tu correo con la solicitud lista.</span>
+          <button type="submit" class="btn btn-primary">Enviar solicitud</button>
         </div>
       </form>
       <div id="ok" class="ok-box" hidden tabindex="-1">

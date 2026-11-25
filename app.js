@@ -51,7 +51,7 @@
     document.getElementById('hero-k').textContent = s.k; document.getElementById('hero-t').textContent = s.t;
     fly.classList.remove('swap'); void fly.offsetWidth; fly.classList.add('swap');
   }
-  function restartHero() { clearInterval(htimer); if (!hpaused) htimer = setInterval(function () { showHero((hi + 1) % hero.length); }, 4500); }
+  function restartHero() { clearInterval(htimer); if (!hpaused) htimer = setInterval(function () { showHero((hi + 1) % hero.length); }, 6000); }
   function setHeroPause(v) { hpaused = v; hp.textContent = v ? '▶' : '❚❚'; hp.setAttribute('aria-label', v ? 'Reanudar la presentación' : 'Pausar la presentación'); restartHero(); }
   hp.addEventListener('click', function () { setHeroPause(!hpaused); });
   var hframe = hbox.closest('.frame');
@@ -61,7 +61,7 @@
 
   // ---- Pantallas reales: pestañas que avanzan solas ----
   var tabs = document.getElementById('tabs'), gbox = document.getElementById('gal-slides'), gimgs = buildSlides(gbox, shots, false);
-  var cap = document.getElementById('shot-cap'), path = document.getElementById('shot-path'), prog = document.getElementById('gal-prog'), tbtn = [], gi = 0, gtimer = null, gstart = 0, ghold = false, GMS = 5500;
+  var cap = document.getElementById('shot-cap'), path = document.getElementById('shot-path'), prog = document.getElementById('gal-prog'), tbtn = [], gi = 0, gtimer = null, gstart = 0, ghold = false, GMS = 6500;
   function pickShot(i, focus) {
     gi = i; var s = shots[i]; cap.textContent = s.cap; path.textContent = 'app.stedrix.com / ' + s.path;
     gimgs[i].loading = 'eager'; swap(gbox, gimgs, i);
