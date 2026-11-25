@@ -22,6 +22,13 @@
     });
   }
 
+  function swap(box, imgs, i) {
+    imgs.forEach(function (im, j) { im.classList.remove('prev'); if (im.classList.contains('on') && j !== i) { im.classList.remove('on'); im.classList.add('prev'); } });
+    var im = imgs[i]; im.classList.remove('on'); void im.offsetWidth; im.classList.add('on');
+    var sc = box.querySelector('.scan'); if (!sc) { sc = document.createElement('span'); sc.className = 'scan'; box.appendChild(sc); }
+    sc.classList.remove('go'); void sc.offsetWidth; if (!still) sc.classList.add('go');
+  }
+
   // ---- Portada: presentación tipo flyer ----
   var hero = [
     { src: 'img/mant-tablero.webp', path: 'mantenimiento', k: 'MANTENIMIENTO', t: 'Cada paro, con su reloj corriendo.', alt: 'Tablero de Mantenimiento con equipos parados, preventivos y costo del mes' },
@@ -40,13 +47,13 @@
   });
   function showHero(i) {
     hi = i; var s = hero[i];
-    himgs.forEach(function (im, j) { im.classList.toggle('on', j === i); });
+    swap(hbox, himgs, i);
     dbtn.forEach(function (b, j) { b.setAttribute('aria-current', j === i ? 'true' : 'false'); });
     document.getElementById('hero-url').textContent = 'app.stedrix.com / ' + s.path;
     document.getElementById('hero-k').textContent = s.k; document.getElementById('hero-t').textContent = s.t;
     fly.classList.remove('swap'); void fly.offsetWidth; fly.classList.add('swap');
   }
-  function restartHero() { clearInterval(htimer); if (!hpaused) htimer = setInterval(function () { showHero((hi + 1) % hero.length); }, 5000); }
+  function restartHero() { clearInterval(htimer); if (!hpaused) htimer = setInterval(function () { showHero((hi + 1) % hero.length); }, 3500); }
   function setHeroPause(v) { hpaused = v; hp.textContent = v ? '▶' : '❚❚'; hp.setAttribute('aria-label', v ? 'Reanudar la presentación' : 'Pausar la presentación'); restartHero(); }
   hp.addEventListener('click', function () { setHeroPause(!hpaused); });
   var hframe = hbox.closest('.frame');
@@ -56,10 +63,10 @@
 
   // ---- Pantallas reales: pestañas que avanzan solas ----
   var tabs = document.getElementById('tabs'), gbox = document.getElementById('gal-slides'), gimgs = buildSlides(gbox, shots, false);
-  var cap = document.getElementById('shot-cap'), path = document.getElementById('shot-path'), prog = document.getElementById('gal-prog'), tbtn = [], gi = 0, gtimer = null, gstart = 0, ghold = false, GMS = 6000;
+  var cap = document.getElementById('shot-cap'), path = document.getElementById('shot-path'), prog = document.getElementById('gal-prog'), tbtn = [], gi = 0, gtimer = null, gstart = 0, ghold = false, GMS = 4500;
   function pickShot(i, focus) {
     gi = i; var s = shots[i]; cap.textContent = s.cap; path.textContent = 'app.stedrix.com / ' + s.path;
-    gimgs.forEach(function (im, j) { im.classList.toggle('on', j === i); if (j === i) im.loading = 'eager'; });
+    gimgs[i].loading = 'eager'; swap(gbox, gimgs, i);
     tbtn.forEach(function (b, j) { b.setAttribute('aria-selected', j === i ? 'true' : 'false'); b.tabIndex = j === i ? 0 : -1; });
     if (focus) tbtn[i].focus();
     gstart = performance.now();
