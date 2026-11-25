@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Stedrix · ERP en la nube hecho en República Dominicana</title>
-<meta name="description" content="Contabilidad, nómina, inventario, facturación electrónica (e-CF), producción, calidad y mantenimiento en un solo sistema. Stedrix, de Enaforge, S.R.L.">
-<meta property="og:title" content="Stedrix · Toda tu empresa en un solo sistema">
-<meta property="og:description" content="ERP en la nube hecho en República Dominicana: contabilidad, nómina, inventario, e-CF, producción, calidad y mantenimiento.">
+<title>Stedrix · ERP en la nube, en renta por módulos</title>
+<meta name="description" content="Stedrix: ERP en la nube en renta mensual. Contabilidad, nómina, inventario, facturación electrónica e-CF, producción, calidad y mantenimiento. Activa solo los módulos que necesitas. De Enaforge, S.R.L.">
+<meta property="og:title" content="Stedrix · Toda tu empresa en un solo sistema, en renta">
+<meta property="og:description" content="ERP en la nube hecho en República Dominicana. Sin servidores, por módulos y con soporte incluido.">
 <meta property="og:image" content="https://stedrix.com/img/mant-tablero.webp">
 <meta property="og:url" content="https://stedrix.com/">
 <meta name="theme-color" content="#05080F">
@@ -16,110 +16,68 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
-<style>
-:root{color-scheme:dark}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:#05080F;font-family:'Inter',system-ui,sans-serif;color:#F2F6FC}
-img{max-width:100%}
-a{color:#7FE3FF}a:hover{color:#B8F1FF}
-.wrap{max-width:1200px;margin:0 auto;padding:0 32px}
-.grid-bg{background-color:#05080F;background-image:linear-gradient(rgba(127,227,255,0.06) 1px,transparent 1px),linear-gradient(90deg,rgba(127,227,255,0.06) 1px,transparent 1px);background-size:48px 48px}
-.mono{font-family:'JetBrains Mono',monospace}
-.tag{font-family:'JetBrains Mono',monospace;font-size:13px;color:#7FE3FF;letter-spacing:0.5px}
-.sg{font-family:'Space Grotesk',sans-serif}
-.h1{font-family:'Space Grotesk',sans-serif;font-size:76px;line-height:1.02;margin:0;font-weight:700;letter-spacing:-1.5px;max-width:980px}
-.h2{font-family:'Space Grotesk',sans-serif;font-size:44px;line-height:1.1;font-weight:700;margin:0;color:#F2F6FC;letter-spacing:-0.5px}
-.lead{font-size:18px;line-height:1.65;color:#9AA8BE;margin:0}
-.tile{background:#0B1220;border:1px solid #1C2A40;border-radius:20px;padding:28px;display:flex;flex-direction:column;gap:12px}
-.tile h3{margin:0;font-family:'Space Grotesk',sans-serif;font-size:24px}
-.tile.big h3{font-size:28px}
-.tile .lead{font-size:16px}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 22px;border-radius:12px;font-weight:600;font-size:16px;text-decoration:none;border:0;cursor:pointer;font-family:inherit}
-.btn-coral{background:#FF6B5E;color:#fff}.btn-coral:hover{background:#FF8A7E;color:#fff}
-.btn-light{background:#F2F6FC;color:#05080F}.btn-light:hover{background:#fff;color:#05080F}
-.btn-ghost{background:transparent;color:#F2F6FC;border:1px solid #24344F}.btn-ghost:hover{color:#fff;border-color:#7FE3FF}
-.in{width:100%;min-height:48px;border:1px solid #24344F;border-radius:10px;padding:10px 14px;font-family:inherit;font-size:16px;color:#F2F6FC;background:#070C17}
-.in:focus{outline:2px solid #7FE3FF;outline-offset:1px}
-.lbl{display:block;font-family:'JetBrains Mono',monospace;font-size:13px;color:#9AA8BE;margin-bottom:6px}
-.sec{padding:96px 0}
-.head{display:flex;flex-direction:column;gap:14px;max-width:760px}
-.frame{border-radius:20px;padding:1px;background:linear-gradient(135deg,rgba(255,138,126,0.6),rgba(47,107,255,0.6) 50%,rgba(127,227,255,0.3));box-shadow:0 40px 120px rgba(0,0,0,0.6)}
-.frame-in{border-radius:19px;overflow:hidden;background:#0B1220}
-.bar{display:flex;align-items:center;gap:8px;padding:10px 14px;border-bottom:1px solid #1C2A40}
-.dot{width:10px;height:10px;border-radius:50%}
-.frame img{display:block;width:100%;height:auto}
-nav a.lnk{color:#9AA8BE;text-decoration:none;font-size:15px;font-weight:500}nav a.lnk:hover{color:#F2F6FC}
-.tabs{display:flex;gap:8px;flex-wrap:wrap}
-.tab{min-height:44px;padding:0 16px;border-radius:10px;border:1px solid #24344F;background:transparent;color:#9AA8BE;font-family:inherit;font-size:14px;font-weight:600;cursor:pointer}
-.tab[aria-selected="true"]{border-color:#7FE3FF;background:rgba(127,227,255,0.12);color:#F2F6FC}
-.mods{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
-.span2{grid-column:span 2}
-.facts{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1px;background:#1C2A40;border:1px solid #1C2A40;border-radius:20px;overflow:hidden}
-.facts div{background:#05080F;padding:28px;display:flex;flex-direction:column;gap:6px}
-.facts b{font-family:'Space Grotesk',sans-serif;font-size:34px}
-.facts span{font-family:'JetBrains Mono',monospace;font-size:13px;color:#9AA8BE}
-.form{background:#0B1220;border:1px solid #1C2A40;border-radius:20px;padding:32px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
-.full{grid-column:span 2}
-.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
-@media (max-width:900px){.mods{grid-template-columns:1fr}.span2{grid-column:auto}}
-@media (max-width:760px){.wrap{padding:0 16px}.h1{font-size:44px}.h2{font-size:32px}.hide-sm{display:none !important}.form{grid-template-columns:1fr;padding:20px}.full{grid-column:auto}.sec{padding:64px 0}}
-</style>
+<link rel="stylesheet" href="estilo.css">
 </head>
 <body>
 
-<header style="position:sticky;top:16px;z-index:5;padding:0 16px">
-  <nav style="max-width:1180px;margin:16px auto 0;display:flex;align-items:center;gap:20px;flex-wrap:wrap;min-height:64px;padding:8px 12px 8px 18px;border-radius:16px;background:rgba(11,18,32,0.82);border:1px solid #1C2A40;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)" aria-label="Principal">
-    <a href="#inicio" style="display:flex;align-items:center;gap:10px;text-decoration:none">
-      <img src="img/stedrix-logo.svg" alt="" width="34" height="34">
-      <span class="sg" style="font-weight:700;font-size:20px;color:#F2F6FC">Stedrix</span>
-    </a>
-    <div class="hide-sm" style="display:flex;gap:26px;flex:1;justify-content:center">
-      <a class="lnk" href="#por-dentro">Plataforma</a>
-      <a class="lnk" href="#modulos">Módulos</a>
-      <a class="lnk" href="#seguridad">Seguridad</a>
-      <a class="lnk" href="#contacto">Contacto</a>
+<header class="top">
+  <nav class="nav" aria-label="Principal">
+    <a href="#inicio" class="brand"><img src="img/stedrix-logo.svg" alt="" width="34" height="34"><span>Stedrix</span></a>
+    <div class="nav-links hide-sm">
+      <a href="#ventajas">Ventajas</a>
+      <a href="#modulos">Módulos</a>
+      <a href="#como-funciona">Cómo funciona</a>
+      <a href="#planes">Planes</a>
+      <a href="#contacto">Contacto</a>
     </div>
-    <div style="display:flex;gap:10px;align-items:center;margin-left:auto">
-      <span class="hide-sm mono" style="font-size:12px;color:#5F6F88">login · próximamente</span>
-      <a href="#contacto" class="btn btn-light" style="min-height:44px">Solicitar demo</a>
-    </div>
+    <a href="#contacto" class="btn btn-coral nav-cta">Solicitar demo</a>
   </nav>
 </header>
 
 <main>
-<section id="inicio" class="grid-bg" style="position:relative;padding:120px 0 80px;margin-top:-80px;overflow:hidden">
-  <div aria-hidden="true" style="position:absolute;left:50%;top:120px;width:900px;max-width:100%;height:520px;transform:translateX(-50%);background:radial-gradient(closest-side,rgba(47,107,255,0.28),rgba(255,94,98,0.10) 60%,transparent);pointer-events:none"></div>
-  <div class="wrap" style="position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;gap:24px">
-    <span class="tag" style="padding:6px 14px;border:1px solid #24344F;border-radius:999px;background:rgba(11,18,32,0.7)"><span style="color:#3DDC97">●</span> ERP en la nube · hecho en República Dominicana</span>
-    <h1 class="h1">Toda tu empresa, <span style="color:#FF8A7E">en un</span> <span style="color:#7FE3FF">solo sistema.</span></h1>
-    <p style="font-size:20px;line-height:1.6;color:#9AA8BE;margin:0;max-width:720px">Contabilidad, nómina, inventario, facturación electrónica, producción, calidad y mantenimiento sobre una sola base de datos. Cada movimiento se registra una vez y llega a donde tiene que llegar.</p>
-    <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center">
+<!-- HERO -->
+<section id="inicio" class="grid-bg hero">
+  <div class="glow" aria-hidden="true"></div>
+  <div class="wrap hero-in">
+    <span class="pill"><span class="ok">●</span> ERP en la nube · en renta por módulos · hecho en RD</span>
+    <h1 class="h1">Tu ERP completo, <span class="c-coral">en renta</span> <span class="c-cyan">y en la nube.</span></h1>
+    <p class="hero-p">Contabilidad, nómina, inventario, facturación electrónica, producción, calidad y mantenimiento sobre una sola base de datos. Sin comprar servidores ni licencias: activa solo los módulos que usas y paga una renta mensual.</p>
+    <div class="row-c">
       <a href="#contacto" class="btn btn-coral">Solicitar demostración</a>
-      <a href="#modulos" class="btn btn-ghost">Explorar módulos <span class="mono" style="color:#7FE3FF">→</span></a>
+      <a href="#modulos" class="btn btn-ghost">Arma tu sistema <span class="mono c-cyan">→</span></a>
     </div>
-    <div class="frame" style="width:100%;margin-top:48px;text-align:left">
+    <div class="frame hero-frame">
       <div class="frame-in">
-        <div class="bar" aria-hidden="true"><span class="dot" style="background:#FF6B5E"></span><span class="dot" style="background:#F5B83D"></span><span class="dot" style="background:#3DDC97"></span><span class="mono" style="margin-left:12px;font-size:12px;color:#5F6F88">app.stedrix.com / mantenimiento</span></div>
+        <div class="bar" aria-hidden="true"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="mono url">app.stedrix.com / mantenimiento</span><span class="live mono"><span class="ok">●</span> en vivo</span></div>
         <img src="img/mant-tablero.webp" width="1600" height="1000" alt="Tablero de Mantenimiento de Stedrix con órdenes abiertas, equipos parados, disponibilidad y costo del mes, en una empresa de demostración" fetchpriority="high">
       </div>
+      <div class="float f1 hide-sm" aria-hidden="true"><span class="mono k">DISPONIBILIDAD</span><b>98.9 %</b></div>
+      <div class="float f2 hide-sm" aria-hidden="true"><span class="mono k">e-CF</span><b class="c-green">Al día</b></div>
     </div>
   </div>
 </section>
 
-<section style="padding:32px 0 96px">
-  <div class="wrap">
-    <div class="facts">
-      <div><b>11</b><span>módulos que se activan por separado</span></div>
-      <div><b>1</b><span>base de datos para toda la empresa</span></div>
-      <div><b>3,300+</b><span>pruebas automáticas por versión</span></div>
-      <div><b>e-CF</b><span>facturación electrónica DGII</span></div>
-    </div>
+<!-- CINTA DE VALOR -->
+<section id="ventajas" class="ribbon">
+  <div class="wrap pillars">
+    <div class="pillar"><span class="ic" aria-hidden="true">
+      <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="6" rx="1.5"/><rect x="3" y="14" width="18" height="6" rx="1.5"/><path d="M3 3l18 18"/></svg></span>
+      <b>0% inversión en servidores</b><span>Nosotros alojamos, respaldamos y cuidamos el sistema.</span></div>
+    <div class="pillar"><span class="ic" aria-hidden="true">
+      <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><path d="M17.5 14v7M14 17.5h7"/></svg></span>
+      <b>Activación flexible</b><span>Empieza con un módulo y agrega más cuando crezcas.</span></div>
+    <div class="pillar"><span class="ic" aria-hidden="true">
+      <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 0 1 14-5.3L20 9"/><path d="M20 4v5h-5"/><path d="M20 12a8 8 0 0 1-14 5.3L4 15"/><path d="M4 20v-5h5"/></svg></span>
+      <b>Soporte y actualizaciones</b><span>Incluidos en la renta: siempre en la última versión.</span></div>
+    <div class="pillar"><span class="ic" aria-hidden="true">
+      <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 18a4.5 4.5 0 0 1-.5-9 6 6 0 0 1 11.5 1.5A3.75 3.75 0 0 1 17.5 18z"/><path d="M12 11v4l2.5 1.5"/></svg></span>
+      <b>Acceso en la nube 24/7</b><span>Desde la oficina, la planta o la casa, con verificación en dos pasos.</span></div>
   </div>
 </section>
 
+<!-- PANTALLAS REALES -->
 <section id="por-dentro" class="grid-bg sec">
-  <div class="wrap" style="display:flex;flex-direction:column;gap:32px">
+  <div class="wrap stack-32">
     <div class="head">
       <span class="tag">// el sistema por dentro</span>
       <h2 class="h2">Pantallas reales, no maquetas.</h2>
@@ -128,172 +86,151 @@ nav a.lnk{color:#9AA8BE;text-decoration:none;font-size:15px;font-weight:500}nav 
     <div class="tabs" role="tablist" aria-label="Pantallas del sistema" id="tabs"></div>
     <div class="frame">
       <div class="frame-in">
-        <div class="bar" aria-hidden="true"><span class="dot" style="background:#FF6B5E"></span><span class="dot" style="background:#F5B83D"></span><span class="dot" style="background:#3DDC97"></span><span class="mono" id="shot-path" style="margin-left:12px;font-size:12px;color:#5F6F88"></span></div>
+        <div class="bar" aria-hidden="true"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="mono url" id="shot-path"></span></div>
         <img id="shot-img" role="tabpanel" width="1600" height="1000" alt="" loading="lazy">
       </div>
     </div>
-    <p id="shot-cap" style="margin:0;font-size:16px;line-height:1.6;color:#9AA8BE;max-width:820px;min-height:52px"></p>
+    <p id="shot-cap" class="cap"></p>
   </div>
 </section>
 
+<!-- MÓDULOS + SIMULADOR -->
 <section id="modulos" class="sec">
-  <div class="wrap" style="display:flex;flex-direction:column;gap:40px">
+  <div class="wrap stack-32">
     <div class="head">
       <span class="tag">// módulos</span>
-      <h2 class="h2">Activa solo lo que necesitas. Todo habla con todo.</h2>
-      <p class="lead">Cada módulo se renta por separado sobre la misma base: una factura mueve el inventario, la contabilidad y la cuenta del cliente en el mismo instante.</p>
+      <h2 class="h2">Arma tu sistema. Todo habla con todo.</h2>
+      <p class="lead">Toca los módulos que necesitas. A la derecha ves tu configuración, y con ella te preparamos la cotización.</p>
     </div>
-    <div class="mods">
-      <div class="tile big span2" style="background:radial-gradient(120% 140% at 100% 0%,rgba(47,107,255,0.18),transparent 55%),#0B1220">
-        <span class="tag">01 · finanzas</span>
-        <h3>Contabilidad, bancos, cuentas por cobrar y por pagar</h3>
-        <p class="lead">Asientos automáticos desde cada módulo, cierres por mes, terceros, centros de costo, presupuesto, activos fijos, conciliación y reportes 606 y 607.</p>
-      </div>
-      <div class="tile" style="background:radial-gradient(120% 140% at 100% 0%,rgba(255,107,94,0.16),transparent 55%),#0B1220">
-        <span class="tag">02 · ventas</span>
-        <h3>Facturación y caja</h3>
-        <p class="lead">Cotización, pedido, factura, punto de venta y restaurante, con e-CF.</p>
-      </div>
-      <div class="tile">
-        <span class="tag">03 · personas</span>
-        <h3>Recursos humanos y nómina</h3>
-        <p class="lead">Expedientes, asistencia, evaluaciones, nómina con TSS e ISR y archivos para el banco.</p>
-      </div>
-      <div class="tile">
-        <span class="tag">04 · operaciones</span>
-        <h3>Inventario, compras e importaciones</h3>
-        <p class="lead">Lotes y vencimientos, almacenes, órdenes de compra, recepciones y costo de llegada.</p>
-      </div>
-      <div class="tile" style="background:radial-gradient(120% 140% at 0% 100%,rgba(127,227,255,0.14),transparent 55%),#0B1220">
-        <span class="tag">05 · planta</span>
-        <h3>Producción</h3>
-        <p class="lead">Recetas, órdenes, MRP y registro en la planta desde tableta.</p>
-      </div>
-      <div class="tile big span2">
-        <span class="tag">06 · calidad y mantenimiento</span>
-        <h3>Calidad y mantenimiento, conectados a la producción</h3>
-        <p class="lead">Especificaciones, muestreo, liberación de lotes, no conformidades y trazabilidad de punta a punta. Equipos, planes preventivos, órdenes de trabajo e indicadores de paros.</p>
-      </div>
-      <div class="tile">
-        <span class="tag">07 · grupo</span>
-        <h3>Varias empresas</h3>
-        <p class="lead">Cada RNC con su contabilidad y sus usuarios, desde un solo acceso.</p>
-      </div>
+    <div class="chips" role="group" aria-label="Filtrar módulos por categoría" id="filtros">
+      <button type="button" class="chip" data-cat="todos" aria-pressed="true">Todos</button>
+      <button type="button" class="chip" data-cat="finanzas" aria-pressed="false">Finanzas</button>
+      <button type="button" class="chip" data-cat="operaciones" aria-pressed="false">Operaciones</button>
+      <button type="button" class="chip" data-cat="comercial" aria-pressed="false">Comercial</button>
+    </div>
+    <div class="mod-layout">
+      <div class="mod-grid" id="mod-grid"></div>
+      <aside class="sim" aria-label="Simulador de tu configuración">
+        <div class="sim-head"><span class="tag">// tu configuración</span><span class="mono sim-count" id="sim-count">0 módulos</span></div>
+        <ul class="sim-list" id="sim-list"><li class="muted">Toca un módulo para agregarlo.</li></ul>
+        <label class="lbl" for="sim-users">usuarios: <b id="sim-users-v" class="c-white">10</b></label>
+        <input type="range" id="sim-users" min="1" max="100" value="10" class="range">
+        <div class="sim-row"><span>Plan sugerido</span><b id="sim-plan">Esencial PyME</b></div>
+        <div class="sim-row"><span>Renta mensual</span><b class="c-cyan">A cotizar</b></div>
+        <p class="sim-note">Sin costo de instalación de servidores. La renta incluye alojamiento, respaldos, soporte y actualizaciones.</p>
+        <a href="#contacto" class="btn btn-coral full-w" id="sim-go">Cotizar esta configuración</a>
+      </aside>
     </div>
   </div>
 </section>
 
-<section id="seguridad" class="grid-bg sec">
-  <div class="wrap" style="display:flex;flex-wrap:wrap;gap:48px;align-items:center">
-    <div style="flex:1 1 420px;min-width:0;display:flex;flex-direction:column;gap:16px">
-      <span class="tag">// seguridad</span>
-      <h2 class="h2">Construido como software de verdad.</h2>
-      <p class="lead">La separación entre empresas la hace cumplir la propia base de datos, no solo la pantalla. Cada cambio pasa por miles de pruebas automáticas antes de salir.</p>
-    </div>
-    <ul style="flex:1 1 480px;min-width:0;list-style:none;margin:0;background:#070C17;border:1px solid #1C2A40;border-radius:16px;padding:22px;font-family:'JetBrains Mono',monospace;font-size:14px;line-height:1.9;color:#9AA8BE">
-      <li><span style="color:#3DDC97" aria-hidden="true">✓</span> aislamiento por empresa en la base de datos</li>
-      <li><span style="color:#3DDC97" aria-hidden="true">✓</span> roles y permisos por función</li>
-      <li><span style="color:#3DDC97" aria-hidden="true">✓</span> verificación en dos pasos</li>
-      <li><span style="color:#3DDC97" aria-hidden="true">✓</span> bitácora de auditoría que no se puede borrar</li>
-      <li><span style="color:#3DDC97" aria-hidden="true">✓</span> contraseñas y llaves cifradas</li>
-      <li><span style="color:#3DDC97" aria-hidden="true">✓</span> 3,300+ pruebas automáticas en cada versión</li>
-    </ul>
-  </div>
-</section>
-
-<section class="sec">
-  <div class="wrap" style="display:flex;flex-direction:column;gap:40px">
+<!-- CÓMO FUNCIONA -->
+<section id="como-funciona" class="sec how">
+  <div class="wrap stack-32">
     <div class="head">
-      <span class="tag">// cómo empezar</span>
-      <h2 class="h2">De la demo a tu primer cierre.</h2>
+      <span class="tag">// cómo funciona</span>
+      <h2 class="h2">De la demo a tu primer cierre, sin costos ocultos.</h2>
     </div>
-    <ol style="list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px">
-      <li class="tile"><span class="mono" style="font-size:14px;color:#FF8A7E">01</span><h3 style="font-size:22px">Demostración</h3><p class="lead">Te mostramos Stedrix con una empresa de ejemplo parecida a la tuya.</p></li>
-      <li class="tile"><span class="mono" style="font-size:14px;color:#FF8A7E">02</span><h3 style="font-size:22px">Configuración</h3><p class="lead">Activamos tus módulos y cargamos catálogo, clientes, suplidores, empleados e inventario.</p></li>
-      <li class="tile"><span class="mono" style="font-size:14px;color:#FF8A7E">03</span><h3 style="font-size:22px">Arranque</h3><p class="lead">Tu equipo empieza a trabajar con acompañamiento hasta el primer cierre.</p></li>
+    <ol class="steps">
+      <li><span class="n">01</span><h3>Demostración</h3><p>Te mostramos Stedrix con una empresa de ejemplo parecida a la tuya y armamos juntos tu configuración.</p></li>
+      <li><span class="n">02</span><h3>Activación</h3><p>Activamos tus módulos en la nube y cargamos catálogo, clientes, suplidores, empleados e inventario.</p></li>
+      <li><span class="n">03</span><h3>Arranque</h3><p>Tu equipo trabaja desde el primer día, con acompañamiento hasta el primer cierre. Pagas solo la renta mensual.</p></li>
     </ol>
-    <div style="display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;padding:32px;border-radius:20px;border:1px solid #24344F;background:linear-gradient(90deg,rgba(255,107,94,0.10),rgba(47,107,255,0.10))">
-      <div style="display:flex;flex-direction:column;gap:6px;flex:1 1 420px;min-width:0">
-        <b class="sg" style="font-size:26px">Pagas solo los módulos que usas.</b>
-        <span style="color:#9AA8BE;font-size:16px">El precio depende de los módulos y los usuarios. Te preparamos una cotización.</span>
-      </div>
-      <a href="#contacto" class="btn btn-light">Solicitar cotización</a>
+  </div>
+</section>
+
+<!-- PLANES -->
+<section id="planes" class="grid-bg sec">
+  <div class="wrap stack-32">
+    <div class="head center">
+      <span class="tag">// planes</span>
+      <h2 class="h2">Un plan para cada etapa de tu empresa.</h2>
+      <p class="lead">Precios en preparación: te enviamos la cotización exacta según tus módulos y usuarios.</p>
+    </div>
+    <div class="toggle" role="radiogroup" aria-label="Forma de pago" id="pago">
+      <button type="button" role="radio" aria-checked="true" data-pago="mensual">Pago mensual</button>
+      <button type="button" role="radio" aria-checked="false" data-pago="anual">Pago anual <span class="save">-20%</span></button>
+    </div>
+    <div class="plans" id="plans">
+      <article class="plan" data-plan="Esencial PyME">
+        <span class="tag">esencial</span>
+        <h3>Esencial PyME</h3>
+        <div class="price"><b>A cotizar</b><span class="per" data-per></span></div>
+        <ul><li>Hasta 3 módulos</li><li>Hasta 10 usuarios</li><li>Facturación electrónica e-CF</li><li>Soporte por correo y chat</li><li>Respaldos diarios</li></ul>
+        <button type="button" class="btn btn-ghost full-w" data-elegir>Elegir Esencial</button>
+      </article>
+      <article class="plan hot" data-plan="Profesional Crecimiento">
+        <span class="badge">Más elegido</span>
+        <span class="tag">profesional</span>
+        <h3>Profesional Crecimiento</h3>
+        <div class="price"><b>A cotizar</b><span class="per" data-per></span></div>
+        <ul><li>Hasta 7 módulos</li><li>Hasta 40 usuarios</li><li>Producción, calidad y mantenimiento</li><li>Soporte prioritario</li><li>Acompañamiento en el arranque</li></ul>
+        <button type="button" class="btn btn-coral full-w" data-elegir>Elegir Profesional</button>
+      </article>
+      <article class="plan" data-plan="Corporativo">
+        <span class="tag">corporativo</span>
+        <h3>Corporativo</h3>
+        <div class="price"><b>A cotizar</b><span class="per" data-per></span></div>
+        <ul><li>Todos los módulos</li><li>Usuarios a la medida</li><li>Varias empresas (RNC) en un acceso</li><li>Soporte dedicado</li><li>Importación desde tu sistema actual</li></ul>
+        <button type="button" class="btn btn-ghost full-w" data-elegir>Elegir Corporativo</button>
+      </article>
     </div>
   </div>
 </section>
 
-<section id="contacto" class="grid-bg sec">
-  <div class="wrap" style="display:flex;flex-wrap:wrap;gap:56px;align-items:flex-start">
-    <div style="flex:1 1 380px;min-width:0;display:flex;flex-direction:column;gap:16px">
+<!-- CTA FINAL + FORMULARIO -->
+<section id="contacto" class="sec cta">
+  <div class="wrap cta-in">
+    <div class="cta-txt">
       <span class="tag">// contacto</span>
       <h2 class="h2">Mírala funcionar con una empresa como la tuya.</h2>
-      <p class="lead">Cuéntanos qué hace tu empresa y qué módulos te interesan. Te escribimos para coordinar la demostración.</p>
-      <p class="mono" style="margin:0;font-size:15px"><a href="mailto:info@stedrix.com" style="color:#9AA8BE">info@stedrix.com</a></p>
-      <p class="mono" style="margin:0;font-size:15px;color:#9AA8BE">Santo Domingo, República Dominicana</p>
-    </div>
-    <form id="form" class="form" style="flex:1 1 520px;min-width:0" aria-label="Solicitar demostración">
-      <div><label class="lbl" for="t-nombre">nombre</label><input class="in" id="t-nombre" name="nombre" type="text" autocomplete="name" required></div>
-      <div><label class="lbl" for="t-empresa">empresa</label><input class="in" id="t-empresa" name="empresa" type="text" autocomplete="organization" required></div>
-      <div><label class="lbl" for="t-correo">correo</label><input class="in" id="t-correo" name="correo" type="email" autocomplete="email" required></div>
-      <div><label class="lbl" for="t-tel">teléfono</label><input class="in" id="t-tel" name="telefono" type="tel" autocomplete="tel"></div>
-      <div class="full"><label class="lbl" for="t-mod">módulos de interés</label><input class="in" id="t-mod" name="modulos" type="text" placeholder="contabilidad, nómina, inventario…"></div>
-      <div class="full"><label class="lbl" for="t-msg">mensaje</label><textarea class="in" id="t-msg" name="mensaje" rows="4" style="min-height:112px;resize:vertical"></textarea></div>
-      <div class="full" style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
-        <span class="mono" style="font-size:12px;color:#5F6F88">se abre tu correo con la solicitud lista</span>
-        <button type="submit" class="btn btn-coral">Enviar solicitud</button>
+      <p class="lead">Cuéntanos qué hace tu empresa. Te escribimos para coordinar la demostración y la cotización.</p>
+      <div class="sel" aria-live="polite">
+        <span class="lbl">tu selección</span>
+        <div id="sel-chips" class="sel-chips"><span class="muted">Aún no eliges módulos ni plan.</span></div>
       </div>
-    </form>
+      <p class="mono contact"><a href="mailto:info@stedrix.com">info@stedrix.com</a><br>Santo Domingo, República Dominicana</p>
+    </div>
+    <div class="form-box">
+      <form id="form" class="form" aria-label="Solicitar demostración">
+        <div><label class="lbl" for="t-nombre">nombre</label><input class="in" id="t-nombre" name="nombre" type="text" autocomplete="name" required></div>
+        <div><label class="lbl" for="t-empresa">empresa</label><input class="in" id="t-empresa" name="empresa" type="text" autocomplete="organization" required></div>
+        <div><label class="lbl" for="t-correo">correo</label><input class="in" id="t-correo" name="correo" type="email" autocomplete="email" required></div>
+        <div><label class="lbl" for="t-tel">teléfono</label><input class="in" id="t-tel" name="telefono" type="tel" autocomplete="tel"></div>
+        <div class="full"><label class="lbl" for="t-msg">mensaje</label><textarea class="in" id="t-msg" name="mensaje" rows="4"></textarea></div>
+        <div class="full form-foot">
+          <span class="mono hint">se abre tu correo con la solicitud lista</span>
+          <button type="submit" class="btn btn-coral">Enviar solicitud</button>
+        </div>
+      </form>
+      <div id="ok" class="ok-box" hidden tabindex="-1">
+        <span class="ok-ic" aria-hidden="true">✓</span>
+        <h3>¡Solicitud preparada!</h3>
+        <p>Se abrió tu programa de correo con la solicitud lista para enviar a info@stedrix.com. Si no se abrió, escríbenos directo y te respondemos en un día laborable.</p>
+        <button type="button" class="btn btn-ghost" id="ok-back">Editar la solicitud</button>
+      </div>
+    </div>
   </div>
 </section>
 </main>
 
-<footer style="border-top:1px solid #1C2A40;padding:36px 0">
-  <div class="wrap" style="display:flex;flex-wrap:wrap;gap:24px;align-items:center;justify-content:space-between;color:#5F6F88">
-    <div style="display:flex;align-items:center;gap:10px">
-      <img src="img/stedrix-logo.svg" alt="" width="30" height="30">
-      <span class="sg" style="font-weight:700;color:#F2F6FC;font-size:18px">Stedrix</span>
+<footer class="foot">
+  <div class="wrap foot-grid">
+    <div class="foot-brand">
+      <a href="#inicio" class="brand"><img src="img/stedrix-logo.svg" alt="" width="30" height="30"><span>Stedrix</span></a>
+      <p>ERP en la nube, en renta por módulos, hecho en República Dominicana.</p>
+      <p class="by"><span>Un producto de</span><img src="img/enaforge-logo.svg" alt="" width="22" height="22"><b>Enaforge, S.R.L.</b></p>
     </div>
-    <div style="display:flex;align-items:center;gap:10px;font-size:14px">
-      <span>Un producto de</span>
-      <img src="img/enaforge-logo.svg" alt="" width="24" height="24">
-      <b style="color:#D9D9DE">Enaforge, S.R.L.</b>
-    </div>
-    <span class="mono" style="font-size:13px">© 2026 Enaforge, S.R.L.</span>
+    <nav aria-label="Accesos rápidos"><b>Stedrix</b><a href="#ventajas">Ventajas</a><a href="#por-dentro">Pantallas</a><a href="#como-funciona">Cómo funciona</a><a href="#planes">Planes</a><a href="#contacto">Solicitar demo</a></nav>
+    <nav aria-label="Módulos"><b>Módulos</b><a href="#modulos">Contabilidad y finanzas</a><a href="#modulos">Recursos humanos y nómina</a><a href="#modulos">Inventario y compras</a><a href="#modulos">Producción y calidad</a><a href="#modulos">Facturación y e-CF</a></nav>
+    <div class="foot-col"><b>Contacto</b><a href="mailto:info@stedrix.com">info@stedrix.com</a><span>Santo Domingo, República Dominicana</span></div>
+  </div>
+  <div class="wrap foot-bottom">
+    <span class="mono">© 2026 Enaforge, S.R.L.</span>
+    <span class="legal"><a href="privacidad.html">Privacidad</a><a href="terminos.html">Términos de uso</a></span>
   </div>
 </footer>
 
-<script>
-(function(){
-  var shots=[
-    {id:'equipo',tab:'Mantenimiento · equipos',path:'mantenimiento/equipos/EM-02',src:'img/mant-equipo.webp',alt:'Ficha de un equipo en Mantenimiento',cap:'Cada máquina con su ubicación, disponibilidad, tiempo entre fallas y tiempo de reparación, planes preventivos, repuestos e historial.'},
-    {id:'lotes',tab:'Calidad · lotes por decidir',path:'calidad/lotes',src:'img/calidad-lotes.webp',alt:'Lotes por decidir en Calidad',cap:'Cada lote que entra, se produce o se despacha pasa por Calidad antes de usarse: por origen, con lo que vence hoy, lo atrasado y lo que espera al laboratorio externo.'},
-    {id:'orden',tab:'Calidad · orden de inspección',path:'calidad/orden/CR-000002',src:'img/calidad-orden.webp',alt:'Orden de calidad con resultados por muestra',cap:'Resultados por muestra y por grupo de pruebas; la decisión del lote, con segunda firma cuando se libera con desviación.'},
-    {id:'proceso',tab:'Calidad · puntos críticos',path:'calidad/proceso',src:'img/calidad-proceso.webp',alt:'Controles de proceso y puntos críticos HACCP',cap:'Controles de proceso y puntos críticos durante la producción: un punto crítico fuera de límite retiene el lote al instante.'},
-    {id:'traza',tab:'Calidad · trazabilidad',path:'calidad/trazabilidad',src:'img/trazabilidad.webp',alt:'Trazabilidad de un lote hacia atrás y hacia adelante',cap:'De dónde vino un lote y a qué clientes fue, con su balance de masa, en segundos. Listo para un simulacro de retiro.'},
-    {id:'prod',tab:'Producción · orden',path:'produccion/ordenes/OP-000016',src:'img/produccion.webp',alt:'Orden de producción con materiales y costo',cap:'La orden de producción con sus materiales, consumos, horas y el costo real contra el planificado.'},
-    {id:'conta',tab:'Contabilidad · estados',path:'contabilidad/estados',src:'img/contabilidad.webp',alt:'Estados financieros en Contabilidad',cap:'Estados financieros NIIF para PYMES con comparativo, notas e indicadores, en PDF o Excel.'},
-    {id:'caja',tab:'Facturación · caja',path:'facturacion/caja',src:'img/facturacion-pos.webp',alt:'Punto de venta con una venta en curso',cap:'Caja rápida con teclado, promociones, ITBIS y e-CF; la balanza y la impresora térmica se conectan con el agente local.'},
-    {id:'rrhh',tab:'RRHH · inicio',path:'inicio',src:'img/rrhh.webp',alt:'Inicio con indicadores de recursos humanos',cap:'Plantilla, rotación, ausentismo, tardanzas y horas extra del mes, por departamento.'}
-  ];
-  var tabs=document.getElementById('tabs'),img=document.getElementById('shot-img'),cap=document.getElementById('shot-cap'),path=document.getElementById('shot-path'),btns=[];
-  function pick(i,focus){
-    var s=shots[i];img.src=s.src;img.alt=s.alt;cap.textContent=s.cap;path.textContent='app.stedrix.com / '+s.path;
-    btns.forEach(function(b,j){b.setAttribute('aria-selected',j===i?'true':'false');b.tabIndex=j===i?0:-1;});
-    if(focus)btns[i].focus();
-  }
-  shots.forEach(function(s,i){
-    var b=document.createElement('button');b.type='button';b.className='tab';b.setAttribute('role','tab');b.textContent=s.tab;
-    b.addEventListener('click',function(){pick(i);});
-    b.addEventListener('keydown',function(e){if(e.key==='ArrowRight'){e.preventDefault();pick((i+1)%shots.length,true);}if(e.key==='ArrowLeft'){e.preventDefault();pick((i-1+shots.length)%shots.length,true);}});
-    tabs.appendChild(b);btns.push(b);
-  });
-  pick(0);
-  document.getElementById('form').addEventListener('submit',function(e){
-    e.preventDefault();var f=e.target;
-    var body='Nombre: '+f.nombre.value+'\nEmpresa: '+f.empresa.value+'\nCorreo: '+f.correo.value+'\nTeléfono: '+f.telefono.value+'\nMódulos: '+f.modulos.value+'\n\n'+f.mensaje.value;
-    location.href='mailto:info@stedrix.com?subject='+encodeURIComponent('Solicitud de demostración · '+f.empresa.value)+'&body='+encodeURIComponent(body);
-  });
-})();
-</script>
+<script src="app.js"></script>
 </body>
 </html>
